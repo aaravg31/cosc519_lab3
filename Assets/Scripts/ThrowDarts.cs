@@ -95,6 +95,10 @@ public class ThrowDarts : MonoBehaviour
         Quaternion spawnRotation = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
 
         GameObject dartInstance = Instantiate(dartPrefab, spawnPosition, spawnRotation);
+        
+        //Aarav Sound
+        SoundManager.Instance?.PlayThrow();
+        
         SetupDartComponents(dartInstance);
 
         Rigidbody dartBody = dartInstance.GetComponent<Rigidbody>();

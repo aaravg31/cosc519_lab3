@@ -146,6 +146,9 @@ public class AppleLauncher : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(lookDirection, planeUp);
         GameObject appleInstance = Instantiate(applePrefab, spawnPosition, lookRotation);
+        
+        //Aarav Sound
+        SoundManager.Instance?.PlaySpawn();
 
         if (appleInstance.TryGetComponent<Rigidbody>(out var rigidbody))
         {

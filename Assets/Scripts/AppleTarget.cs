@@ -72,6 +72,10 @@ public class AppleTarget : MonoBehaviour
         {
             return;
         }
+        
+        //Aarav Sound
+        SoundManager.Instance?.PlayHit();
+        
 
         _isSliced = true;
 
