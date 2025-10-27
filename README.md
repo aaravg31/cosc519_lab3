@@ -36,7 +36,8 @@ The goal was to create an **interactive AR environment** featuring at least thre
 5. **🌳 Tap-to-Place Tree (AR Interaction)**  
    - Allows users to tap on a detected plane to place a small 3D tree prefab.  
    - Demonstrates direct plane raycasting and object instantiation in AR.
-   - Ensures natural placement of trees by offsetting it's height 
+   - Ensures natural placement of trees by offsetting it's height
+   - Managed by `TapToPlaceTree.cs`
 
 ---
 
@@ -58,7 +59,7 @@ The goal was to create an **interactive AR environment** featuring at least thre
 |--------------|---------------|--------------|
 | **Zhehao Sun** | 🍎 Apple Spawner + ⚔️ Swipe Interaction | Implemented the `AppleLauncher.cs`, `ThrowDarts.cs`, `DartProjectile.cs`, and `AppleTarget.cs` scripts. These handle apple spawning, gesture detection for throwing shurikens, collision detection, and apple-splitting physics. |
 | **Aarav Gosalia** | 🔊 Sound System + Project Setup | Implemented the `SoundManager.cs` script, integrated audio triggers into the game logic (apple spawn, throw, and hit events). Also responsible for organizing the repository structure, managing the final project build, and submitting the demo and GitHub repository. |
-| **Sadia Ahmmed** | 🌳 Tap-to-Place Tree Interaction | Created the `ARPlaceTree.cs` script, which allows users to tap detected AR planes to place a tree prefab in the environment. |
+| **Sadia Ahmmed** | 🌳 Tap-to-Place Tree Interaction | Created the `TapToPlaceTree.cs` script, which allows users to tap detected AR planes to place a tree prefab in the environment. |
 
 ---
 
@@ -73,7 +74,7 @@ Assets/
 │   ├── DartProjectile.cs      # Controls shuriken behavior and aim assist
 │   ├── AppleTarget.cs         # Detects hits and splits apples into halves
 │   ├── SoundManager.cs        # Centralized sound playback system
-│   └── ARPlaceTree.cs      # Handles tree placement on plane tap (Placeholder)
+│   └── TapToPlaceTree.cs      # Handles tree placement on plane tap (Placeholder)
 ├── Prefabs/              # Contains apple, shuriken, and sliced apple prefabs
 └── Scenes/
     └── Lab3Scene.unity   # Main AR scene for the project
