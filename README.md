@@ -6,7 +6,10 @@
 ## 🎮 Project Description  
 This project is an **Augmented Reality (AR)** experience developed for **COSC 519 (J) Lab 3** using **Unity 6000.2.7f2 (URP)** and **AR Foundation (ARCore)** for Android devices.  
 
-The goal was to create an **interactive AR environment** featuring at least three engaging interactions. Our team built a fruit-slicing mini-game where apples spawn and fall in AR space, and players can **swipe to throw shurikens** to slice them. Each action is paired with responsive **sound effects**, and an additional interaction allows users to **tap on a plane to spawn a tree** in the environment.  
+The goal was to create an **interactive AR environment** featuring at least three engaging interactions. Our team built a **fruit-slicing mini-game** where apples spawn and fall in AR space, and players can **swipe to throw shurikens** to slice them. Each action is paired with responsive **sound effects**, and users can also **tap on a plane to place a 3D tree**.  
+
+A simple **UI Mode Switcher** allows players to toggle between the *Apple Slice* and *Tree Place* modes, ensuring only one mode is active at a time.  
+
 
 ---
 
@@ -34,10 +37,15 @@ The goal was to create an **interactive AR environment** featuring at least thre
    - Managed by a global **`SoundManager`** script using an `AudioSource` component.   
 
 5. **🌳 Tap-to-Place Tree (AR Interaction)**  
-   - Allows users to tap on a detected plane to place a small 3D tree prefab.  
-   - Demonstrates direct plane raycasting and object instantiation in AR.
-   - Ensures natural placement of trees by offsetting it's height
-   - Managed by `TapToPlaceTree.cs`
+   - Allows users to tap a detected AR plane to instantiate a tree prefab at that location.  
+   - Utilizes AR raycasting for accurate placement and offsets the tree slightly above ground level.  
+   - Managed by `TapToPlaceTree.cs`.
+
+6. **🟩 Mode Switcher UI (Mode Toggle System)**  
+   - Two floating buttons (`Apple Slice` and `Tree Place`) appear at the top-left of the screen.  
+   - Selecting a mode activates its corresponding interaction and visually highlights the selected button (green).  
+   - Only one mode can be active at a time.  
+   - Managed by `ModeSwitcher.cs`.
 
 ---
 
@@ -57,9 +65,10 @@ The goal was to create an **interactive AR environment** featuring at least thre
 
 | Team Member | Contribution | Description |
 |--------------|---------------|--------------|
-| **Zhehao Sun** | 🍎 Apple Spawner + ⚔️ Swipe Interaction | Implemented the `AppleLauncher.cs`, `ThrowDarts.cs`, `DartProjectile.cs`, and `AppleTarget.cs` scripts. These handle apple spawning, gesture detection for throwing shurikens, collision detection, and apple-splitting physics. |
-| **Aarav Gosalia** | 🔊 Sound System + Project Setup | Implemented the `SoundManager.cs` script, integrated audio triggers into the game logic (apple spawn, throw, and hit events). Also responsible for organizing the repository structure, managing the final project build, and submitting the demo and GitHub repository. |
-| **Sadia Ahmmed** | 🌳 Tap-to-Place Tree Interaction | Created the `TapToPlaceTree.cs` script, which allows users to tap detected AR planes to place a tree prefab in the environment. |
+| **Zhehao Sun** | 🍎 Apple Spawner + ⚔️ Swipe Interaction | Implemented the `AppleLauncher.cs`, `ThrowDarts.cs`, `DartProjectile.cs`, and `AppleTarget.cs` scripts. Handles apple spawning, gesture detection, projectile launching, and apple-splitting physics. |
+| **Aarav Gosalia** | 🔊 Sound System + UI Mode Switcher + Project Setup | Implemented `SoundManager.cs` and integrated audio triggers. Designed and coded the `ModeSwitcher.cs` UI system for toggling between Apple and Tree modes. Responsible for organizing the repository, Android build setup, and final submission/demo. |
+| **Sadia Ahmmed** | 🌳 Tap-to-Place Tree Interaction | Created `TapToPlaceTree.cs` to allow plane tapping and tree instantiation in AR space. Focused on natural placement and AR raycasting logic. |
+
 
 ---
 
@@ -74,8 +83,9 @@ Assets/
 │   ├── DartProjectile.cs      # Controls shuriken behavior and aim assist
 │   ├── AppleTarget.cs         # Detects hits and splits apples into halves
 │   ├── SoundManager.cs        # Centralized sound playback system
-│   └── TapToPlaceTree.cs      # Handles tree placement on plane tap (Placeholder)
-├── Prefabs/              # Contains apple, shuriken, and sliced apple prefabs
+│   ├── ModeSwitcher.cs        # UI toggle system for switching between modes
+│   └── TapToPlaceTree.cs      # Handles tree placement via screen tap
+├── Prefabs/              # Contains apple, shuriken, sliced apple, and tree prefabs
 └── Scenes/
     └── Lab3Scene.unity   # Main AR scene for the project
 ```
@@ -83,11 +93,13 @@ Assets/
 ---
 
 ## 🎥 Demo Video  
-<a href="https://www.youtube.com/watch?v=dummy-arfruit-demo" target="_blank">
-  <img src="https://img.youtube.com/vi/dummy-arfruit-demo/hqdefault.jpg" alt="Demo video thumbnail" />
+<a href="https://youtube.com/shorts/Mb5bMKOWy5Y?feature=share" target="_blank">
+  <img src="https://img.youtube.com/vi/Mb5bMKOWy5Y/hqdefault.jpg" alt="Demo video thumbnail" />
 </a>  
 
-**YouTube Video – Demo showcasing all AR interactions.**
+**YouTube Video – Demonstration of all AR interactions (Apple Slice, Shuriken Throw, Tree Placement, and Mode Switcher UI).**
+
+Note: Not the best demo but didn't have time to make a nice one...
 
 ---
 
