@@ -915,6 +915,10 @@ PrefabInstance:
       propertyPath: m_OccludeARHitsWith2DObjects
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2512387470528047718, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
+      propertyPath: m_RaycastPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2512387470528047719, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       propertyPath: m_Name
       value: XR Origin (AR Rig)
