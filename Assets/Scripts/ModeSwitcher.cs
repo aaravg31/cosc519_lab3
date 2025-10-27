@@ -7,9 +7,10 @@ public class ModeSwitcher : MonoBehaviour
     public Button appleModeButton;
     public Button treeModeButton;
 
-    [Header("Mode Objects")]
-    public GameObject appleLauncherObject;  // The object that has AppleLauncher.cs
-    public GameObject tapToPlaceTreeObject; // The object that has TapToPlaceTree.cs
+    [Header("Mode Scripts")]
+    public AppleLauncher appleLauncher;       // On AppleLauncher GameObject
+    public ThrowDarts throwDarts;             // On AR Camera (under XR Origin)
+    public TapToPlaceTree tapToPlaceTree;     // On Tree placement GameObject
 
     [Header("Button Colors")]
     public Color activeColor = Color.green;
@@ -23,8 +24,7 @@ public class ModeSwitcher : MonoBehaviour
         appleModeButton.onClick.AddListener(() => SetMode(Mode.Apple));
         treeModeButton.onClick.AddListener(() => SetMode(Mode.Tree));
 
-        // Set initial mode
-        SetMode(Mode.Apple);
+        SetMode(Mode.Apple); // Default
     }
 
     private void SetMode(Mode mode)
@@ -34,24 +34,23 @@ public class ModeSwitcher : MonoBehaviour
         bool appleActive = (mode == Mode.Apple);
         bool treeActive = (mode == Mode.Tree);
 
-        // Toggle objects
-        if (appleLauncherObject != null) appleLauncherObject.SetActive(appleActive);
-        if (tapToPlaceTreeObject != null) tapToPlaceTreeObject.SetActive(treeActive);
+        // ✅ Toggle scripts, not objects
+        if (appleLauncher != null)
+            appleLauncher.enabled = appleActive;
 
-        // Update button colors
+        if (throwDarts != null)
+            throwDarts.enabled = appleActive;
+
+        if (tapToPlaceTree != null)
+            tapToPlaceTree.enabled = treeActive;
+
         UpdateButtonColors();
     }
 
     private void UpdateButtonColors()
     {
-        ColorBlock appleColors = appleModeButton.colors;
-        ColorBlock treeColors = treeModeButton.colors;
-
-        // Change the "normalColor" of the button
-        appleColors.normalColor = (currentMode == Mode.Apple) ? activeColor : inactiveColor;
-        treeColors.normalColor = (currentMode == Mode.Tree) ? activeColor : inactiveColor;
-
-        appleModeButton.colors = appleColors;
-        treeModeButton.colors = treeColors;
+        // Instantly recolor buttons without delay
+        appleModeButton.image.color = (currentMode == Mode.Apple) ? activeColor : inactiveColor;
+        treeModeButton.image.color = (currentMode == Mode.Tree) ? activeColor : inactiveColor;
     }
 }
