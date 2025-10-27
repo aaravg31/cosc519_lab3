@@ -74,7 +74,7 @@ Assets/
 │   ├── DartProjectile.cs      # Controls shuriken behavior and aim assist
 │   ├── AppleTarget.cs         # Detects hits and splits apples into halves
 │   ├── SoundManager.cs        # Centralized sound playback system
-│   └── ARPlaceTree.cs      # Handles tree placement on plane tap (Placeholder)
+│   └── TapToPlaceTree.cs      # Handles tree placement on plane tap (Placeholder)
 ├── Prefabs/              # Contains apple, shuriken, and sliced apple prefabs
 └── Scenes/
     └── Lab3Scene.unity   # Main AR scene for the project
