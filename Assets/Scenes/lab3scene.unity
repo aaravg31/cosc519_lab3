@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3a1c046145f4c7e8a54dbdb9d5a5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TapToPlaceTree
-  treePrefab: {fileID: 919132149155446097, guid: 348ae55cc684a19488c5aec4a9286a56, type: 3}
+  treePrefab: {fileID: 8855901845503783592, guid: 717715407cebbd74bb9f20e2bb2b75d2, type: 3}
   raycastManager: {fileID: 1700582875}
 --- !u!4 &228332874
 Transform:
